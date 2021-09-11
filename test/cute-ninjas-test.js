@@ -25,7 +25,7 @@ describe("CuteNinjas", function () {
     expect(await cuteNinjas.contractURI()).to.equal(CONTRACT_URI);
   });
 
-  it("Should mint a new token", async function () {
+  it("Should mint a new token and return a tokenURI", async function () {
     const ninjaPrice = await cuteNinjas.ninjaPrice();
     const tokenId = await cuteNinjas.totalSupply()+1;
 
@@ -36,6 +36,7 @@ describe("CuteNinjas", function () {
     ).to.emit(cuteNinjas, "Transfer")
     .withArgs(ethers.constants.AddressZero, owner.address, tokenId);
     expect(await cuteNinjas.balanceOf(owner.address)).to.equal(1);
+
+    expect(await cuteNinjas.tokenURI(tokenId)).to.equal(BASE_URI+ "1")
   });
-  xit("Should return a valid token URI", async function () {});
 });
