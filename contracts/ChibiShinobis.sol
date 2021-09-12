@@ -22,7 +22,6 @@ contract ChibiShinobis is ERC721Enumerable, Ownable {
     address t3 = 0x7E67aF7FF72cb87b7B0100cA8128F4673D185234;
     address t4 = 0x7E67aF7FF72cb87b7B0100cA8128F4673D185234;
 
-    // Chibi Shinobis are so cute, they dont need a lots of complicated code :)
     // 10,000 shinobis in total bc of shadow clone jutsu
     constructor(string memory baseURI, string memory contractDefaultURI) ERC721("Chibi Shinobis", "CHIBIS")  {
         setBaseURI(baseURI);
